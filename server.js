@@ -25,7 +25,7 @@ var articles = {
  'article-two' : {
     title: 'ArticleTwo ! Abhinav kumar',
     heading: 'Article-Two',
-    date: 'sep 5, 2016',
+    date: 'sep 10, 2016',
     content:
                     `<p>
                         This is the content for my second article.
@@ -95,12 +95,7 @@ app.get('/:articleName',function(req, res){
     var articleName = req.params.articleName;
   res.send(createTemplate(articles[articleName]));
     });
-app.get('/article-two',function(req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/article-three',function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
+    
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
